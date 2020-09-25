@@ -13,7 +13,6 @@
 ## Use
 
 TODO: insert diagram
-TODO: explain stateMachine usage
 
 Instance your states
 ```javascript
@@ -30,12 +29,12 @@ Instance your states
   })
 ```
 
-Set state machine flow and actions 
+Set your state machine behavior
 ```javascript
   const stateMachine = {
     initialState: BookState._nameLookup.INACTIVE,
     actions: {
-      inactivate: {
+      active_to_inactive: {
         from: BookState._nameLookup.ACTIVE,
         to: BookState._nameLookup.INACTIVE,
         description: 'Inactivate book sent by parameter',
@@ -43,7 +42,7 @@ Set state machine flow and actions
           console.log(JSON.stringify(params))
         }
       },
-      activate: {
+      inactive_to_active: {
         from: BookState._nameLookup.INACTIVE,
         to: BookState._nameLookup.ACTIVE,
         action: async (params) => {
@@ -93,7 +92,7 @@ Simfinity have been automatically create states queries
 
 ```graphql
 mutation{
-  activate_book(input:{
+  inactive_to_active_book(input:{
   	id:"5f6be280baf80d2af0ebe792" # use your mongo id instead
   }){
     name
@@ -103,7 +102,7 @@ mutation{
 
 ```graphql
 mutation{
-  inactivate_book(input:{
+  activate_to_inactive(input:{
   	id:"5f6be280baf80d2af0ebe792" # use your mongo id instead
   }){
     name

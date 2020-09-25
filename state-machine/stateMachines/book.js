@@ -3,7 +3,7 @@ const {BookState} = require('../enums/bookState')
 const stateMachine = {
   initialState: BookState._nameLookup.INACTIVE,
   actions: {
-    inactivate: {
+    active_to_inactive: {
       from: BookState._nameLookup.ACTIVE,
       to: BookState._nameLookup.INACTIVE,
       description: 'Inactivate book sent by parameter',
@@ -11,7 +11,7 @@ const stateMachine = {
         console.log(JSON.stringify(params))
       }
     },
-    activate: {
+    inactive_to_active: {
       from: BookState._nameLookup.INACTIVE,
       to: BookState._nameLookup.ACTIVE,
       action: async (params) => {
