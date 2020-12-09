@@ -1,19 +1,2 @@
 # simfinity.js-samples
-
-# WIP
-
-## Relationships
-
-## Controllers
-
-## Validations 
-
-## Machine state
-
-## Functions
-    1. connect()
-    2. saveObject()
-    3. addNoEndpointType()
-    4. createSchema()
-
-## Unit test
+In this repo you will find project samples that show [SimfinityJS](https://github.com/simtlix/simfinity.js) features. 
