@@ -37,7 +37,7 @@ const AuthorType = new GraphQLObjectType({
         }
       },
       resolve (parent, args) {
-        return gnx.getModel(BookType).find({ authorID: parent._id })
+        return simfinity.getModel(BookType).find({ authorID: parent._id })
       }
     }
   })

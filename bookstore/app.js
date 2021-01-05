@@ -4,7 +4,7 @@ const simfinity = require('@simtlix/simfinity-js')
 const app = express()
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost:27017,localhost:27018,localhost:27019/example2', { replicaSet: 'rs', useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017,localhost:27018,localhost:27019/example', { replicaSet: 'rs', useNewUrlParser: true, useUnifiedTopology: true })
 
 mongoose.connection.once('open', () => {
   console.log('connected to database')
